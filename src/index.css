@@ -21,6 +21,10 @@
   .input {
     @apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-gray pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-gray max-sm:rounded-full;
   }
+
+  .nav-link {
+    @apply transition ease-in-out duration-200 decoration-transparent underline underline-offset-8 hover:decoration-slate-800 text-slate-gray hover:text-slate-700 px-4 py-2;
+  }
 }
 
 @layer utilities {
