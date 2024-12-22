@@ -25,6 +25,10 @@
   .nav-link {
     @apply transition ease-in-out duration-200 decoration-transparent underline underline-offset-8 hover:decoration-slate-800 text-slate-gray hover:text-slate-700 px-4 py-2;
   }
+
+  .btn-primary {
+    @apply bg-coral-red hover:bg-coral-red-dark text-white transition ease-in-out duration-150;
+  }
 }
 
 @layer utilities {

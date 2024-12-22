@@ -18,10 +18,7 @@ const Nav = () => {
                 </a>
                 <ul className="flex justify-center items-center max-lg:hidden">
                     {navLinks.map((item) => (
-                        <li
-                            key={item.label}
-                            className="nav-link"
-                        >
+                        <li key={item.label} className="nav-link">
                             <a
                                 className="font-montserrat leading-normal text-lg font-medium"
                                 href={item.href}
@@ -31,6 +28,20 @@ const Nav = () => {
                         </li>
                     ))}
                 </ul>
+                <div className="max-lg:hidden">
+                    <button
+                        type="button"
+                        className="px-6 py-2 rounded-full font-montserrat text-lg font-medium text-slate-gray mr-2"
+                    >
+                        Log in
+                    </button>
+                    <button
+                        type="button"
+                        className="px-6 py-2 rounded-full font-montserrat text-lg font-medium btn-primary"
+                    >
+                        Sign up
+                    </button>
+                </div>
                 <div className="lg:hidden">
                     {!displayMobileMenu && (
                         <img
@@ -41,29 +52,46 @@ const Nav = () => {
                             onClick={toggleHamburgerMenu}
                         />
                     )}
-                    {displayMobileMenu && (
-                        <div className="fixed bg-white top-0 right-0 w-9/12 h-screen z-11 shadow-xl padding-x py-8 transition-all ease-in-out duration-500">
+                    <div
+                        className={`fixed bg-white top-0 ${
+                            displayMobileMenu ? "right-0" : "-right-full"
+                        } w-3/5 h-screen z-11 shadow-xl padding-x py-6 transition-all ease-in-out duration-500`}
+                    >
+                        <div className="mb-4 flex justify-end">
                             <img
                                 src={close}
                                 alt="close sidebar"
-                                className="mb-4 ml-24"
                                 onClick={toggleHamburgerMenu}
                             />
-
-                            <ul className="flex flex-col space-y-2">
-                                {navLinks.map((item) => (
-                                    <li key={item.label}>
-                                        <a
-                                            className="font-montserrat leading-normal text-lg text-slate-gray font-medium"
-                                            href={item.href}
-                                        >
-                                            {item.label}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
                         </div>
-                    )}
+
+                        <ul className="flex flex-col space-y-2 mb-4">
+                            {navLinks.map((item) => (
+                                <li key={item.label}>
+                                    <a
+                                        className="font-montserrat leading-normal text-xl text-slate-gray font-medium"
+                                        href={item.href}
+                                    >
+                                        {item.label}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                        <div className="space-y-2">
+                            <button
+                                type="button"
+                                className="px-6 py-2 rounded-full font-montserrat text-lg font-medium btn-primary w-full"
+                            >
+                                Log in
+                            </button>
+                            <button
+                                type="button"
+                                className="py-2 rounded-full font-montserrat text-lg font-medium btn-primary w-full"
+                            >
+                                Sign up
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </header>
