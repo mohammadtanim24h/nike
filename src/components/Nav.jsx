@@ -28,7 +28,7 @@ const Nav = () => {
                         </li>
                     ))}
                 </ul>
-                <div className="max-lg:hidden">
+                <div className="max-lg:hidden sm:pr-4">
                     <button
                         type="button"
                         className="px-6 py-2 rounded-full font-montserrat text-lg font-medium text-slate-gray mr-2"
