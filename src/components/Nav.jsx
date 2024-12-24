@@ -11,7 +11,7 @@ const Nav = () => {
     };
 
     return (
-        <header className="padding-x py-8 absolute z-10 w-full">
+        <header className="padding-x py-8 absolute z-20 w-full">
             <nav className="flex justify-between items-center max-container">
                 <a href="/">
                     <img src={headerLogo} alt="Logo" width={130} height={29} />
@@ -55,7 +55,7 @@ const Nav = () => {
                     <div
                         className={`fixed bg-white top-0 ${
                             displayMobileMenu ? "right-0" : "-right-full"
-                        } w-3/5 h-screen z-11 shadow-xl padding-x py-6 transition-all ease-in-out duration-500`}
+                        } w-3/5 h-screen shadow-xl padding-x py-6 transition-all ease-in-out duration-500`}
                     >
                         <div className="mb-4 flex justify-end">
                             <img
