@@ -1,5 +1,5 @@
 import { footerLogo } from "../assets/images";
-import { socialMedia } from "../constants";
+import { footerLinks, socialMedia } from "../constants";
 
 const Footer = () => {
     return (
@@ -22,7 +22,7 @@ const Footer = () => {
                         {socialMedia.map((icon) => (
                             <div
                                 key={icon.alt}
-                                className="flex justify-center items-center w-12 h-12 bg-white rounded-full cursor-pointer"
+                                className="flex justify-center items-center w-12 h-12 bg-white rounded-full cursor-pointer hover:bg-coral-red"
                             >
                                 <img
                                     src={icon.src}
@@ -34,7 +34,27 @@ const Footer = () => {
                         ))}
                     </div>
                 </div>
-                
+                <div className="flex flex-1 justify-between lg:gap-10 gap-20 flex-wrap">
+                    {footerLinks.map(({ title, links }) => (
+                        <div key={title}>
+                            <h4 className="text-white font-montserrat text-2xl leading-normal font-medium mb-2">
+                                {title}
+                            </h4>
+                            <ul className="space-y-1">
+                                {links.map(({ name, link }) => (
+                                    <li key={name}>
+                                        <a
+                                            href={link}
+                                            className="text-white-400 font-montserrat text-base leading-normal hover:text-coral-red"
+                                        >
+                                            {name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
             </div>
         </footer>
     );
